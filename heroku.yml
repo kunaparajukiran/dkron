@@ -2,4 +2,4 @@ build:
   docker:
     web: Dockerfile
 run:
-  web: dkron agent --server --bootstrap-expect=1 -p 8080:80
+  web: dkron agent --server --bootstrap-expect=1 --http-addr=80
