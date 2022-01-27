@@ -1,7 +1,7 @@
 FROM golang:1.17
 LABEL maintainer="Victor Castell <victor@victorcastell.com>"
 
-EXPOSE 8080 8946
+EXPOSE 80 8946
 
 RUN mkdir -p /app
 WORKDIR /app
@@ -13,4 +13,4 @@ RUN go mod download
 COPY . .
 RUN go install ./...
 
-CMD ["dkron"]
+CMD ["dkron agent --server --bootstrap-expect=1 --http-addr=80"]
